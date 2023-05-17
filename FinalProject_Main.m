@@ -9,12 +9,12 @@ clear
 % Load image to approximate
 load('Buddy_Images/buddyfig.mat','buddyfig'); % Figure adapted from https://twitter.com/UCOBronchos/status/1273249045822267401/photo/1
 A = buddyfig;
-%{
+
 % Plot the original image
 figure;
 imshow(mat2gray(A));
 title('Original Image','fontsize',14,'interpreter','latex')
-%}
+
 %{
   Add in some Gaussian White Noise using the built in function awgn(Signal, Signal-Noise ratio)
   https://octave.sourceforge.io/communications/function/awgn.html
@@ -150,36 +150,30 @@ S = reshape(S(:,5), x, y);
 
 figure;
 imshow(mat2gray(B));
-%imshow(B);
 title('Low Rank Image B','fontsize',14,'interpreter','latex')
 imwrite(mat2gray(B),'Buddy_Images/Noise_Corruption/Fixed_ImageB.jpg')
 
 figure;
 imshow(mat2gray(C));
-%imshow(C);
 title('Low Rank Image C','fontsize',14,'interpreter','latex')
 imwrite(mat2gray(C),'Buddy_Images/Noise_Corruption/Fixed_ImageC.jpg')
 
 figure;
 imshow(mat2gray(D));
-%imshow(D);
 title('Low Rank Image D','fontsize',14,'interpreter','latex')
 imwrite(mat2gray(D),'Buddy_Images/Noise_Corruption/Fixed_ImageD.jpg')
 
 figure;
 imshow(mat2gray(E));
-%imshow(E);
 title('Low Rank Image E','fontsize',14,'interpreter','latex')
 imwrite(mat2gray(E),'Buddy_Images/Noise_Corruption/Fixed_ImageE.jpg')
 
 figure;
 imshow(mat2gray(L));
-%imshow(L);
 title('Low Rank Target Image M','fontsize',14,'interpreter','latex')
 imwrite(mat2gray(L),'Buddy_Images/Noise_Corruption/LowRank_ImageM.jpg')
 
 figure;
 imshow(mat2gray(S));
-%imshow(S);
 title('Sparse Target Image M','fontsize',14,'interpreter','latex')
 imwrite(mat2gray(S),'Buddy_Images/Noise_Corruption/Sparse_ImageM.jpg')
