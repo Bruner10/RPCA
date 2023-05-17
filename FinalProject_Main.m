@@ -137,6 +137,7 @@ imwrite(mat2gray(M),'Buddy_Images/Noise_Corruption/Corrupted_ImageM.jpg')
 
 Z = [B(:), C(:), D(:), E(:), M(:)];
 
+%Call the ALM function to run the algorithm
 tic();
 [L, S] = ALM(Z);
 toc()
