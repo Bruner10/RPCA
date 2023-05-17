@@ -134,7 +134,7 @@ imshow(mat2gray(M));
 title('Target Corrupted Image M','fontsize',14,'interpreter','latex')
 imwrite(mat2gray(M),'Buddy_Images/Noise_Corruption/Corrupted_ImageM.jpg')
 
-
+% Vectorize the images into a single matrix
 Z = [B(:), C(:), D(:), E(:), M(:)];
 
 %Call the ALM function to run the algorithm
@@ -142,6 +142,7 @@ tic();
 [L, S] = ALM(Z);
 toc()
 
+% Unvectorize the matrix to get the individual images back
 B = reshape(L(:,1), x, y);
 C = reshape(L(:,2), x, y);
 D = reshape(L(:,3), x, y);
